@@ -474,6 +474,9 @@ img { max-width: 100%; display: block; }
 .contact-form button { justify-self: start; }
 
 .form-note { font-size: 0.85rem; color: var(--red); min-height: 1.2em; margin: 0; }
+.form-note-error { color: #b5382f; }
+
+.hp-field { display: none; }
 
 /* Footer */
 .site-footer { background: var(--ink); padding: 30px 0; }

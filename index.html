@@ -9,6 +9,12 @@
 <meta name="google-site-verification" content="edQI_mPD6FVGkt35ZaTDMpGX4H0YUnDcCgov1uvISZM" />
 <link rel="icon" href="data:,">
 
+<!-- Segurança: GitHub Pages não permite cabeçalhos HTTP customizados, então o que dá
+     para reforçar via <meta> vai aqui. X-Frame-Options, X-Content-Type-Options e
+     Permissions-Policy só funcionam como cabeçalho HTTP de verdade, não via meta. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <!-- Open Graph / redes sociais -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -485,6 +491,7 @@
         <label>Mensagem
           <textarea name="mensagem" rows="4" required></textarea>
         </label>
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
         <button type="submit" class="btn btn-red">Enviar mensagem</button>
         <p class="form-note" id="formNote"></p>
       </form>

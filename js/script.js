@@ -37,12 +37,12 @@ form.addEventListener('submit', async (e) => {
 
   if (form.action.includes('SEU_FORM_ID')) {
     formNote.textContent = 'Formulário ainda não configurado — veja o README.md.';
-    formNote.style.color = '#b5382f';
+    formNote.classList.add('form-note-error');
     return;
   }
 
   submitBtn.disabled = true;
-  formNote.style.color = '';
+  formNote.classList.remove('form-note-error');
   formNote.textContent = 'Enviando...';
 
   try {
@@ -57,11 +57,11 @@ form.addEventListener('submit', async (e) => {
       form.reset();
     } else {
       formNote.textContent = 'Não foi possível enviar. Tente novamente ou use o e-mail ao lado.';
-      formNote.style.color = '#b5382f';
+      formNote.classList.add('form-note-error');
     }
   } catch (err) {
     formNote.textContent = 'Não foi possível enviar. Tente novamente ou use o e-mail ao lado.';
-    formNote.style.color = '#b5382f';
+    formNote.classList.add('form-note-error');
   } finally {
     submitBtn.disabled = false;
   }
